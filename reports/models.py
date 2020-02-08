@@ -21,3 +21,6 @@ class Report(models.Model):
     status = models\
         .CharField(choices=STATUSES, max_length=1, default=PENDING)
     image = models.ImageField(blank=True)
+
+    def __str__(self):
+        return self.title

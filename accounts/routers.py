@@ -5,4 +5,4 @@ from .viewsets import UserViewset
 
 
 router = SimpleRouter()
-router.register(r'users', UserViewset)
+router.register(r'users', UserViewset, basename='users')

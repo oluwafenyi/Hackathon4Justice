@@ -5,4 +5,4 @@ from .viewsets import ReportViewSet
 
 
 router = SimpleRouter()
-router.register(r'reports', ReportViewSet)
+router.register(r'reports', ReportViewSet, basename='reports')
