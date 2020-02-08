@@ -5,17 +5,14 @@ from .models import Profile, CustomUser
 from reports.serializers import ReportSerializer
 
 
-class ProfileSerializer(serializers.HyperlinkedModelSerializer):
-    user = serializers.HyperlinkedRelatedField(view_name='user_detail',
-                                               read_only=True)
-
+class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('phone', 'user')
+        fields = ('phone',)
 
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-    reports = ReportSerializer(many=True, required=False)
+class UserSerializer(serializers.ModelSerializer):
+    reports = ReportSerializer(many=True, read_only=True)
     password = serializers.CharField(write_only=True)
     profile = ProfileSerializer(required=False)
 

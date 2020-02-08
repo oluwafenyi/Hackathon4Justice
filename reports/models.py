@@ -17,7 +17,7 @@ class Report(models.Model):
     title = models.CharField(max_length=200)
     case_description = models.TextField()
     reporter = models\
-        .ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+        .ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='reports')
     status = models\
         .CharField(choices=STATUSES, max_length=1, default=PENDING)
     image = models.ImageField(blank=True)

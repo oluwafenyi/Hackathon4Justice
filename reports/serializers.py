@@ -5,6 +5,8 @@ from .models import Report
 
 
 class ReportSerializer(serializers.ModelSerializer):
+
     class Meta:
-        fields = '__all__'
+        fields = ('id', 'title', 'case_description', 'reporter',
+                  'status', 'image')
         model = Report
