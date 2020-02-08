@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 )
 
-SECRET_KEY = os.getenv('QUICK')
+SECRET_KEY = os.getenv('FREEDEON')
 
 
 INSTALLED_APPS = [
