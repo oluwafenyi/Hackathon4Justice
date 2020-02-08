@@ -13,5 +13,7 @@ CORS_ORIGIN_WHITELIST = [
     '*',
 ]
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
