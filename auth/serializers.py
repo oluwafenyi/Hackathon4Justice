@@ -2,6 +2,8 @@
 from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 from rest_framework_simplejwt.settings import api_settings
 
+from accounts.serializers import UserSerializer
+
 
 class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
@@ -10,4 +12,5 @@ class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         expires = api_settings.ACCESS_TOKEN_LIFETIME
         data['expires'] = expires.seconds
+        data['authUserData'] = UserSerializer(self.user).data
         return data
